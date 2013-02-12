@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.9.23)  11 DEC 2012 23:44
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.9.23)  11 FEB 2013 21:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -77,41 +77,49 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 49.
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--80
+Underfull \hbox (badness 10000) in paragraph at lines 80--84
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--92
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--132
+Overfull \hbox (4.87692pt too wide) in paragraph at lines 102--103
+[]\OT1/cmr/m/n/10 Exercised metic-u-lous test driven de-vel-op-ment pro-to-col;
+ printer driver has roughly
+ []
 
+
+Overfull \hbox (11.31212pt too wide) in paragraph at lines 110--111
+[]\OT1/cmr/m/n/10 Wrote ex-ten-sive Test-ing/Quality As-sur-ance doc-u-men-ta-t
+ion for soft-ware/hardware. 
  []
 
 [1
 
 {/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] ) 
 Here is how much of TeX's memory you used:
- 330 strings out of 493488
- 3784 string characters out of 3141347
+ 332 strings out of 493488
+ 3805 string characters out of 3141347
  55496 words of memory out of 3000000
- 3711 multiletter control sequences out of 15000+200000
- 4906 words of font info for 18 fonts, out of 3000000 for 9000
+ 3712 multiletter control sequences out of 15000+200000
+ 5252 words of font info for 19 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 29i,8n,21p,162b,149s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,8n,21p,179b,149s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/
 local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/l
 ocal/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/lo
 cal/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
 l/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
-exlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb>
-Output written on resume.pdf (1 page, 68352 bytes).
+exlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/te
+xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on resume.pdf (1 page, 81146 bytes).
 PDF statistics:
- 28 PDF objects out of 1000 (max. 8388607)
- 19 compressed objects within 1 object stream
+ 32 PDF objects out of 1000 (max. 8388607)
+ 22 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
