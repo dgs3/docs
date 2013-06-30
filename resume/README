@@ -1,2 +1,3 @@
 Copy res.cls into the correct resume colder.
 generate with pdflatex
+Commit only the .tex and .pdf files
