@@ -5,5 +5,4 @@ set expandtab
 set number
 set cursorline
 set cuc
-set bg=dark
 set cc=80
