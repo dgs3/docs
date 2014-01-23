@@ -27,18 +27,20 @@
 
 \setlength{\textwidth}{5.1in} % Text width of the document
 
+\setlength{\textheight}{11in}
+
 \begin{document}
 
 %----------------------------------------------------------------------------------------
 %	NAME AND ADDRESS SECTION
 %----------------------------------------------------------------------------------------
 
-\moveleft.5\hoffset\centerline{\large\bf Dave Sayles}
+\moveleft.5\hoffset\centerline{\large\bf David Sayles}
 
 \moveleft.5\hoffset\centerline{sayles.dave@gmail.com\hspace{64pt}www.github.com/dgs3}
 
  
-\moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip % Horizontal line after name; adjust line thickness by changing the '1pt'
+\moveleft1.5\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip % Horizontal line after name; adjust line thickness by changing the '1pt'
  
 \moveleft.5\hoffset\centerline{1311 Pacific St} % Your address
 \moveleft.5\hoffset\centerline{Brooklyn, NY 11216}
@@ -52,9 +54,9 @@
 %	OBJECTIVE SECTION
 %----------------------------------------------------------------------------------------
  
-\section{Objective}  
+%\section{Objective}  
 
-A position in the field of computer science.
+%A position in the field of computer science.
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION SECTION
@@ -64,7 +66,6 @@ A position in the field of computer science.
 
 {\sl Bachelor of Science,} Computer Science and Digital Art \\
 Union College, Schenectady, NY, 12308 \\
-Minor: Japanese \\
 {\sl Bachelors Thesis:} Evofab: A Fully Embodied Evolutionary Fabricator.
 \begin{itemize} \itemsep -2pt
 \item[-] Wrote an Interactive Evolutionary Algorithm to optimize movement instructions for a 3D printer in order to create specific patterns.
@@ -77,10 +78,13 @@ Minor: Japanese \\
 
 \section{Skills} 
 
-{\sl Programming Languages \& Applications:}
-Python, C++, \LaTeX, VIM, GIT \\
-{\sl Spoken Languages:}
-English (native), Japanese (conversational). \\
+\begin{itemize} \itemsep -2pt
+\setlength{\itemindent}{-25pt}
+\item[] Languages: Python, C++
+\item[] Development: Vim, Version Control (git), MacOS, Linux
+\item[] Spoken Languages: English (native), Japanese (conversational)
+\item[] Software integration, writing software specs, cross team communication
+\end{itemize}
 
 %----------------------------------------------------------------------------------------
 %	PUBLICATIONS SECTION
@@ -98,34 +102,35 @@ J. Rieffel and D. Sayles. EvoFab: A Fully Embodied Evolutionary Fabricator.  \\I
 {\sl Software Developer} \hfill Apr 2012 - Present \\
 Makerbot Industries, Brooklyn, NY
 \begin{itemize} \itemsep -2pt
-\item[-] Owned \textit{s3g} printer driver and machine code utility package for use in \textit{MakerWare} (https://github.com/makerbot/s3g).
-\item[-] Exercised meticulous test driven development protocol; printer driver has roughly 95\% code coverage.
-\item[-] Worked on \textit{conveyor}, a CUPs-like dispatch system leveraged by \textit{MakerWare} for printing (https://github.com/makerbot/conveyor).
-\item[-] Contributed on Replicator 1/2 Firmware \\(https://github.com/makerbot/mightyboardfirmware).
+\item[-] Architected and wrote \textit{kaiten}, the embedded python server that schedules and organizes processes such as I/O, printing, firmware uploading and other user facing jobs on the new family of \textit{MakerBot} Desktop 3D Printers.  Interfaces with the desktop \textit{MakerWare} software stack for remote printing.
+\item[-] Primary developer on \textit{conveyor}, the current backend server for the \textit{MakerWare} software stack.  \textit{conveyor} takes print job parameters from the \textit{MakerWare} GUI, and dispatches to sub-components ranging from the \textit{MiracleGrue} slicer to the \textit{s3g} print driver.
+\item[-] Primary developer on \textit{Digitizer Desktop 3D Scanner} integration with the \textit{MakerWare} GUI and \textit{libdigitzer} 3D geometry packages.
+\item[-] Primary developer on \textit{s3g} printer driver and machine code utility package for use with \textit{MakerWare} (https://github.com/makerbot/s3g).
+\item[-] Exercised meticulous test driven development protocol; printer driver has roughly 100\% code coverage.
 \end{itemize}
 
 {\sl Software Technician} \hfill Jan 2012 - Apr 2012 \\
 Makerbot Industries, Brooklyn, NY
 \begin{itemize} \itemsep -2pt
 \item[-] Wrote extensive Testing/Quality Assurance documentation for software/hardware.
-\item[-] Conducted experiments geared towards validating new hardware.
 \end{itemize}
 
-{\sl Program Manager} \hfill Dec 2012 - Present \\
+{\sl Board Member} \hfill Dec 2012 - Present \\
 Matthew Sayles Foundation, Ridgewood, NJ
 \begin{itemize} \itemsep -2pt
-\item[-] Sit on the Executive board for charitable Not-For-Profit Organization, geared towards raising awareness of Salivary Gland Cancer.
+\item[-] Sit on the Executive board for 501c3 Not-For-Profit Organization, geared towards raising awareness of Salivary Gland Cancer.
 \item[-] Run bi-monthly meetings.
 \item[-] Manage vendors and equipment for Saylestock Music Festival.
+\item[-] Write grants to obtain donations from patrons.
 \end{itemize}
 
 %----------------------------------------------------------------------------------------
 %	EXTRA-CURRICULAR ACTIVITIES SECTION
 %----------------------------------------------------------------------------------------
 
-\section{Experience} 
+\section{Awards} 
 
-{\sl Eagle Scount, Boy Scout Troop 8} \\
+{\sl Eagle Scount, Boy Scout Troop 8, Ridgewood NJ} \\
 {\sl Deans List, 2012}
 %----------------------------------------------------------------------------------------
 
