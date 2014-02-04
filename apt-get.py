@@ -35,4 +35,23 @@ if len(errored) != 0:
     print("***************************************")
     print("The following apts failed to be gotten:")
     print(", ".join(errored))
+print("***************************************\n\n")
+
 print("***************************************")
+print("Setting Up Git")
+print("***************************************")
+git_config_call = ["git", "config", "--global"]
+failed = []
+for call in [
+             ["user.name", "dgs3"], 
+             ["user.email", "sayles.dave@gmail.com"],
+             ["core.editor", "vi"],
+            ]:
+    try:
+        print("Setting {0}".format(" ".join(call)))
+        subprocess.check_call(git_config_call + call)
+    except Exception as e:
+        failed.append(call)
+if len(failed) != 0:
+    for call in failed:
+        print("Failed to execute {0}".format(" ".join(call)))
