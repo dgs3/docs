@@ -16,6 +16,7 @@ apts = [
     "git",
     "screen",
     "sl",
+    "ispell",
     ]
 
 call = ["apt-get", "install"]
