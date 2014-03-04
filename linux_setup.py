@@ -6,10 +6,12 @@ Script to grab a bunch of apts I need.
 You probably need to sudo this script
 """
 
+import os
 import subprocess
 
 apts = [
     "aptitude",
+    "chromium-chromedriver",
     "vim",
     "scons",
     "python3.3",
@@ -56,3 +58,9 @@ for call in [
 if len(failed) != 0:
     for call in failed:
         print("Failed to execute {0}".format(" ".join(call)))
+
+print("***************************")
+print("Copying configuration files")
+print("***************************")
+for f in ["vimrc", "inputrc"]:
+    os.copy(f, os.path.join(os.environ["HOME"], ".{0}".format(f)))
