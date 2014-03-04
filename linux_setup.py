@@ -10,6 +10,7 @@ import os
 import subprocess
 
 apts = [
+    "audacious",
     "aptitude",
     "chromium-chromedriver",
     "vim",
