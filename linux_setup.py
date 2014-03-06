@@ -13,6 +13,7 @@ apts = [
     "audacious",
     "aptitude",
     "chromium-chromedriver",
+    "graphviz",
     "vim",
     "scons",
     "python3.3",
