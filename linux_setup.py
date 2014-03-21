@@ -7,6 +7,7 @@ You probably need to sudo this script
 """
 
 import os
+import shutil
 import subprocess
 
 apts = [
@@ -65,4 +66,9 @@ print("***************************")
 print("Copying configuration files")
 print("***************************")
 for f in ["vimrc", "inputrc"]:
-    os.copy(f, os.path.join(os.environ["HOME"], ".{0}".format(f)))
+    shutil.copy2(f, os.path.join(os.environ["HOME"], ".{0}".format(f)))
+
+
+with open("bashrc") as my_bashrc:
+    with open(os.path.join(os.environ["HOME"], ".{0}".format("bashrc")), "ab") as host_bashrc:
+        host_bashrc.write(my_bashrc.read())
