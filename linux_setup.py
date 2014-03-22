@@ -6,16 +6,22 @@ Script to grab a bunch of apts I need.
 You probably need to sudo this script
 """
 
+import os
+import shutil
 import subprocess
 
 apts = [
+    "audacious",
     "aptitude",
+    "chromium-chromedriver",
+    "graphviz",
     "vim",
     "scons",
     "python3.3",
     "git",
     "screen",
     "sl",
+    "ispell",
     ]
 
 call = ["apt-get", "install"]
@@ -55,3 +61,14 @@ for call in [
 if len(failed) != 0:
     for call in failed:
         print("Failed to execute {0}".format(" ".join(call)))
+
+print("***************************")
+print("Copying configuration files")
+print("***************************")
+for f in ["vimrc", "inputrc"]:
+    shutil.copy2(f, os.path.join(os.environ["HOME"], ".{0}".format(f)))
+
+
+with open("bashrc") as my_bashrc:
+    with open(os.path.join(os.environ["HOME"], ".{0}".format("bashrc")), "ab") as host_bashrc:
+        host_bashrc.write(my_bashrc.read())
