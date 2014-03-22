@@ -14,6 +14,7 @@ apts = [
     "audacious",
     "aptitude",
     "chromium-chromedriver",
+    "cmatrix",
     "graphviz",
     "vim",
     "scons",
