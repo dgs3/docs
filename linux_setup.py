@@ -21,6 +21,7 @@ apts = [
     "git",
     "screen",
     "sl",
+    "tmux",
     "ispell",
     ]
 
@@ -65,7 +66,7 @@ if len(failed) != 0:
 print("***************************")
 print("Copying configuration files")
 print("***************************")
-for f in ["vimrc", "inputrc"]:
+for f in ["vimrc", "inputrc", "tmux.conf"]:
     shutil.copy2(f, os.path.join(os.environ["HOME"], ".{0}".format(f)))
 
 
