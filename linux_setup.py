@@ -16,6 +16,7 @@ apts = [
     "chromium-chromedriver",
     "cmatrix",
     "graphviz",
+    "mosh",
     "vim",
     "scons",
     "python3.3",
