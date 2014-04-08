@@ -19,12 +19,13 @@ MOSH_EXT=.tar.gz
 wget http://mosh.mit.edu/$MOSH$MOSH_EXT
 tar -xf $MOSH$MOSH_EXT
 cd $MOSH
-PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./configure
-make
+LD_LIBRARY_PATH=/usr/local/lib PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./configure
+LD_LIBRARY_PATH=/usr/local/lib PKG_CONFIG_PATH=/usr/local/lib/pkgconfig make
 make install
 
 cd ..
 
-iptables -A INPUT --proto udp --match udp --match multiport --dports 60000:61000 -j ACCEPT
+iptables -I INPUT 1 --proto udp --match udp --match multiport --dports 60000:61000 -j ACCEPT
 
 echo "/usr/local/lib" >> /etc/ld.so.conf
+ldconfig
