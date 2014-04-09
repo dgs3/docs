@@ -21,10 +21,10 @@ apts = [
     "scons",
     "python3.3",
     "git",
-    "screen",
     "sl",
     "tmux",
     "ispell",
+    "xclip",
     ]
 
 call = ["apt-get", "install"]
