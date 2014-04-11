@@ -26,6 +26,7 @@ def setup_apts():
         "tmux",
         "ispell",
         "xclip",
+        "postgresql-client",
         ]
 
     call = ["apt-get", "install"]
