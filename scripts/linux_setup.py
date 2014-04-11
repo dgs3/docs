@@ -73,7 +73,7 @@ def setup_configs():
     print("Copying configuration files")
     print("***************************")
     base_path = os.path.join("..", "configs")
-    for f in ["vimrc", "inputrc", "tmux.conf"]:
+    for f in ["vimrc", "inputrc", "tmux.conf", "psqlrc",]:
         path = os.path.join(base_path, f)
         shutil.copy2(f, os.path.join(os.environ["HOME"], ".{0}".format(path)))
 
