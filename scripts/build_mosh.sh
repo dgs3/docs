@@ -26,6 +26,8 @@ make install
 cd ..
 
 iptables -I INPUT 1 --proto udp --match udp --match multiport --dports 60000:61000 -j ACCEPT
+service iptables save
+service iptables restart
 
 echo "/usr/local/lib" >> /etc/ld.so.conf
 ldconfig
