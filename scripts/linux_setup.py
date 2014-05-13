@@ -11,6 +11,11 @@ import shutil
 import subprocess
 
 def setup_apts():
+    apt_scripts = ["mopidy_apt.sh"
+    for ac in apt_scripts:
+        subprocess.check_call("./{0}".format(ac))
+    subprocess.check_call(["apt-get", "update"])
+
     apts = [
         "audacious",
         "aptitude",
@@ -22,6 +27,9 @@ def setup_apts():
         "scons",
         "python3.3",
         "git",
+        "mopidy",
+        "mopidy-spotify",
+        "ncmpcpp",
         "sl",
         "tmux",
         "ispell",
