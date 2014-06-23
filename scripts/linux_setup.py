@@ -22,6 +22,7 @@ def setup_apts():
         "chromium-chromedriver",
         "cmatrix",
         "graphviz",
+        "openssh-server",
         "mosh",
         "vim",
         "scons",
