@@ -90,6 +90,9 @@ def setup_configs():
         with open(os.path.join(os.environ["HOME"], ".{0}".format("bashrc")), "ab") as host_bashrc:
             host_bashrc.write(my_bashrc.read())
 
+def enable_bluetooth():
+    subprocess.check_call(["sudo", "hciconfig", "hci0", "reset"])
+
 def setup_mosh():
     print("***************************")
     print("Setting up mosh ssh replacement")
@@ -139,12 +142,17 @@ if __name__ == "__main__":
         action="store_true",
         default=False,
         help="Setup the mosh ssh replacement")
+    parser.add_argument(
+        "--bluetooth",
+        action="store_true",
+        help="Enable bluetooth on your linux machine")
     args = parser.parse_args()
     mapping = {
         "git": setup_git,
         "apts": setup_apts,
         "configs": setup_configs,
         "mosh": setup_mosh,
+        "bluetooth", setup_bluetooth,
     }
     if getattr(args, "all", False):
         print("Building all...")
