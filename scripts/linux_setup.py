@@ -90,7 +90,7 @@ def setup_configs():
         with open(os.path.join(os.environ["HOME"], ".{0}".format("bashrc")), "ab") as host_bashrc:
             host_bashrc.write(my_bashrc.read())
 
-def enable_bluetooth():
+def setup_bluetooth():
     subprocess.check_call(["sudo", "hciconfig", "hci0", "reset"])
 
 def setup_mosh():
@@ -152,7 +152,7 @@ if __name__ == "__main__":
         "apts": setup_apts,
         "configs": setup_configs,
         "mosh": setup_mosh,
-        "bluetooth", setup_bluetooth,
+        "bluetooth": setup_bluetooth,
     }
     if getattr(args, "all", False):
         print("Building all...")
