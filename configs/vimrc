@@ -6,6 +6,7 @@ set number
 set cursorline
 set cuc
 set cc=80
+set background=dark
 
 fu! CurrentFile()
     let file=expand("%:p")
@@ -20,27 +21,6 @@ fu! List()
     !ls ./
 endfunction
 
-fu! VolumeUp(amt)
-    !ncmpcpp volume +a:amt
-endfunction 
-
-fu! VolumeDown()
-    !ncmpcpp volume -5
-endfunction
-
-fu! Play()
-    !ncmpcpp play
-endfunction
-
-fu! Pause()
-    !ncmpcpp pause
-endfunction
-
 nnoremap <expr> <c-v>f CurrentFile()
 
 nnoremap <expr> <c-v>l List()
-
-nnoremap <expr> <c-v>+ VolumeUp()
-nnoremap <expr> <c-v>- VolumeDown()
-nnoremap <expr> <c-v>pl Play()
-nnoremap <expr> <c-v>pa Pause()
