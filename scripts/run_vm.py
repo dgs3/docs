@@ -31,7 +31,7 @@ def get_vm_ip(vm_name):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(help="Manage virtual machines")
+    parser = argparse.ArgumentParser()
     subparser = parser.add_subparsers(dest="command")
     start_vm_parser = subparser.add_parser("start-vm",
                                     help="Start a vm")
