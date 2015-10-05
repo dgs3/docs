@@ -5,8 +5,10 @@ set expandtab
 set number
 set cursorline
 set cuc
-set cc=80
+set cc=79
 set background=dark
+set tw=79
+set formatoptions+=t
 
 fu! CurrentFile()
     let file=expand("%:p")
