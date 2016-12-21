@@ -11,34 +11,21 @@ import shutil
 import subprocess
 
 def setup_apts():
-    apt_scripts = ["mopidy_apt.sh"]
-    for ac in apt_scripts:
-        subprocess.check_call("./{0}".format(ac))
-    subprocess.check_call(["apt-get", "update"])
+    subprocess.check_call(["sudo", "apt-get", "update"])
 
     apts = [
-        "audacious",
         "aptitude",
         "chromium-chromedriver",
-        "cmatrix",
-        "graphviz",
         "openssh-server",
-        "mosh",
         "vim",
-        "scons",
-        "python3.3",
         "git",
-        "mopidy",
-        "mopidy-spotify",
-        "ncmpcpp",
         "sl",
         "tmux",
         "ispell",
         "xclip",
-        "postgresql-client",
         ]
 
-    call = ["apt-get", "install"]
+    call = ["sudo", "apt-get", "install"]
 
     errored = []
 
@@ -90,25 +77,6 @@ def setup_configs():
         with open(os.path.join(os.environ["HOME"], ".{0}".format("bashrc")), "ab") as host_bashrc:
             host_bashrc.write(my_bashrc.read())
 
-def setup_bluetooth():
-    subprocess.check_call(["sudo", "hciconfig", "hci0", "reset"])
-
-def setup_mosh():
-    print("***************************")
-    print("Setting up mosh ssh replacement")
-    print("***************************")
-    script = "setup_mosh.sh"
-    try:
-        subprocess.check_call(["./setup_mosh.sh"])
-    except subprocess.CalledProcessError as e:
-        print("***************************")
-        print("Failed to setup mosh...")
-        print("***************************")
-    else:
-        print("***************************")
-        print("Successfully setup mosh")
-        print("***************************")
-
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
@@ -136,23 +104,11 @@ if __name__ == "__main__":
         action="store_true",
         default=False,
         help="Sets up all of the configs that go in ~/.*",)
-    parser.add_argument(
-        "--mosh",
-        dest="mosh",
-        action="store_true",
-        default=False,
-        help="Setup the mosh ssh replacement")
-    parser.add_argument(
-        "--bluetooth",
-        action="store_true",
-        help="Enable bluetooth on your linux machine")
     args = parser.parse_args()
     mapping = {
         "git": setup_git,
         "apts": setup_apts,
         "configs": setup_configs,
-        "mosh": setup_mosh,
-        "bluetooth": setup_bluetooth,
     }
     if getattr(args, "all", False):
         print("Building all...")
