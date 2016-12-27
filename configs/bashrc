@@ -1,4 +1,0 @@
-alias pyhelp='python -c help\(\)'
-
-## Neverware Stuff
-alias skyjuice_db='PGPASSWORD=jw_president psql -U neverware  --dbname skyjuice -h skyjuice.ccv5vg7r5o8t.us-east-1.rds.amazonaws.com'

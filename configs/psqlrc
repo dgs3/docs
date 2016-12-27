@@ -1,1 +1,0 @@
-\set skyjuice_query 'SELECT * FROM skyjuice.metricsubmission inner join skyjuice.metric m using(metricsubmissionid) ORDER by metricsubmissionid desc, m.timestamp desc;'

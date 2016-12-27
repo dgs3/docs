@@ -69,13 +69,9 @@ def setup_configs():
     print("Copying configuration files")
     print("***************************")
     base_path = os.path.join("..", "configs")
-    for f in ["vimrc", "inputrc", "tmux.conf", "psqlrc",]:
+    for f in ["vimrc", "inputrc", "tmux.conf"]:
         path = os.path.join(base_path, f)
         shutil.copy2(path, os.path.join(os.environ["HOME"], ".{0}".format(f)))
-
-    with open(os.path.join(base_path, "bashrc")) as my_bashrc:
-        with open(os.path.join(os.environ["HOME"], ".{0}".format("bashrc")), "ab") as host_bashrc:
-            host_bashrc.write(my_bashrc.read())
 
 if __name__ == "__main__":
     import argparse
