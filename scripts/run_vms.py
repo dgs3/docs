@@ -41,6 +41,11 @@ def create_vm_storage(storage_name):
 def installable_vms(args):
     """Launches a VM with attached storage volume for installation"""
     storage_name = args.storage_name
+    storage_size = '24G'
+    create_storage_call = ['qemu-img',
+                           'create', '-f', 'qcow2', storage_name, storage_size]
+    call_cmd(create_storage_call)
+
     vm_name = args.vm_name
     call = ["qemu-system-x86_64",
             "-enable-kvm",
