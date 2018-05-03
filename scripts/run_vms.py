@@ -54,6 +54,7 @@ def installable_vms(args):
             "-boot", "menu=on",
             "-cpu", "core2duo",
             "-vga", "cirrus",
+            "-vnc", "*:1",
             "-net", "nic,model=virtio,macaddr=52:54:00:12:34:56",
             "-net", "user,hostfwd=tcp::9222-:22",
             "-device", "usb-ehci",
@@ -74,6 +75,7 @@ def run_vm(args):
             "-smp", "4",
             "-cpu", "core2duo",
             "-vga", "cirrus",
+            "-vnc", "*:1",
             "-net", "nic,model=virtio,macaddr=52:54:00:12:34:57",
             "-net", "user,hostfwd=tcp::9222-:22",
             "-hda", vm_name]
