@@ -51,7 +51,7 @@ def installable_vms(args):
             "-enable-kvm",
             "-m", "4G",
             "-smp", "4",
-            "-boot", "menu=on",
+            "-boot", "menu=on,splash-time=30000",
             "-cpu", "core2duo",
             "-vga", "cirrus",
             "-vnc", "*:1",
