@@ -30,6 +30,8 @@ def parse_args():
                                        help='Just run the VM')
     run_vm_sub.add_argument('--vm-name',
                             help='VM to run')
+    run_vm_sub.add_argument('--tap-interface',
+                            help='Number of the tap interface to use')
     run_vm_sub.set_defaults(func=run_vm)
     return parser.parse_args()
 
@@ -69,16 +71,33 @@ def installable_vms(args):
 def run_vm(args):
     """Launch storage volume"""
     vm_name = args.vm_name
-    call = ["qemu-system-x86_64",
-            "-enable-kvm",
-            "-m", "4G",
-            "-smp", "4",
-            "-cpu", "core2duo",
-            "-vga", "cirrus",
-            "-vnc", "*:1",
-            "-net", "nic,model=virtio,macaddr=52:54:00:12:34:57",
+    if args.tap_interface:
+        # this increments the mac addr so we don't overlap
+        mac = '52:54:00:12:34:5{}'.format(6+int(args.tap_interface))
+        tap = "tap,id=network{},ifname=tap{},script=no,downscript=no"
+        tap = tap.format(args.tap_interface, args.tap_interface)
+        device = "e1000,netdev=network{},mac={}"
+        device = device.format(args.tap_interface, mac)
+        vnc = '*:{}'.format(args.tap_interface)
+        net_args = [
+            "-netdev", tap,
+            "-device", device,
+            "-vnc", vnc
+        ]
+    else:
+        net_args = [
+            "-net", "nic,model=virtio,macaddr=52:54:00:12:34:56",
             "-net", "user,hostfwd=tcp::9222-:22",
+            "-vnc", "*:1",
+        ]
+    call = ["/home/dgs3/data/qemu/x86_64-softmmu/qemu-system-x86_64",
+            "-enable-kvm",
+            "-m", "8G",
+            "-smp", "8",
+            "-cpu", "SandyBridge,-invpcid,-tsc-deadline,check",
+            "-vga", "cirrus",
             "-hda", vm_name]
+    call += net_args
     call_cmd(call)
 
 def main():
